@@ -21,6 +21,12 @@ public abstract class SelectableItemsTemplatedControlBase<T, TElement, TCollecti
         SelectedValueProperty = new(_SelectedValueProperty);
         SelectedIndexProperty.ValueChanged += SelectedIndexProperty_ValueChanged;
         ItemsSourceProperty.ItemsChanged += ItemsSourceProperty_ItemsChanged;
+        PreferAlwaysSelectItemProperty.ValueChanged += (old, @new) =>
+        {
+            if (@new && SelectedIndex < 0)
+                // let's trigger SelectedIndex auto selection logic
+                SelectedIndex = -1;
+        };
         tempCollection.ItemsChanged += delegate
         {
             var a = this;
@@ -50,7 +56,7 @@ public abstract class SelectableItemsTemplatedControlBase<T, TElement, TCollecti
                     break;
                 case ItemsMovedUpdateAction<T> moved:
                     if (SelectedIndex == moved.OldIndex) SelectedIndex = moved.NewIndex;
-                    if (SelectedIndex == moved.NewIndex) SelectedIndex = moved.OldIndex;
+                    else if (SelectedIndex == moved.NewIndex) SelectedIndex = moved.OldIndex;
                     break;
                 case ItemsReplacedUpdateAction<T> replaced:
                     if (SelectedIndex == replaced.Index) SelectedIndex = -1;
@@ -65,7 +71,14 @@ public abstract class SelectableItemsTemplatedControlBase<T, TElement, TCollecti
             _SelectedValueProperty.Value = ItemsSourceProperty[newValue];
         else
             _SelectedValueProperty.Value = default;
+
+        if (newValue is < 0 && PreferAlwaysSelectItemProperty.Value && ItemsSourceProperty.Count > 0)
+        {
+            var guessNewIndex = Math.Clamp(oldValue - 1, 0, ItemsSourceProperty.Count - 1);
+            SelectedIndex = guessNewIndex;
+        }
     }
+    public Property<bool> PreferAlwaysSelectItemProperty { get; } = new(false);
     public Property<int> SelectedIndexProperty { get; } = new(-1);
 
     readonly Property<T?> _SelectedValueProperty = new(default);
@@ -89,6 +102,58 @@ public abstract class SelectableItemsTemplatedControlBase<T, TElement, TCollecti
             tempCollection.Clear();
         });
     }
+    //partial void OnPrimarySelectedItemChanged(T oldValue, T newValue)
+    //{
+    //    if (oldValue == newValue) return;
+    //    if (IsLoaded)
+    //    {
+    //        var container = SafeContainerFromIndex(PrimarySelectedIndex);
+    //        if ((container is null && newValue is null) ||
+    //            (container is not null && ItemFromContainer(container) == newValue))
+    //        {
+    //            // Everything is already taken care by index setter
+    //            return;
+    //        }
+    //        if (newValue == null)
+    //        {
+    //            PrimarySelectedIndex = -1;
+    //            return;
+    //        }
+    //        PrimarySelectedIndex = SafeIndexFromContainer(ContainerFromItem(newValue));
+    //        return;
+    //    }
+    //    else
+    //    {
+    //        if (newValue is null)
+    //        {
+    //            if (PrimarySelectedIndex is < 0)
+    //                // this is already correct
+    //                return;
+    //            PrimarySelectedIndex = -1;
+    //        }
+    //        if (ItemsSource is IList list)
+    //        {
+    //            if (PrimarySelectedIndex >= 0 && PrimarySelectedIndex < list.Count
+    //                && list[PrimarySelectedIndex] == newValue)
+    //                // this is already correct
+    //                return;
+    //            var i = list.IndexOf(newValue);
+    //            if (i > 0) throw new KeyNotFoundException("The item you requested to select is not found in the list");
+    //            PrimarySelectedIndex = i;
+    //        }
+    //        else
+    //        {
+    //            if (PrimarySelectedIndex >= 0 && PrimarySelectedIndex < Items.Count
+    //                && Items[PrimarySelectedIndex] == newValue)
+    //                // this is already correct
+    //                return;
+    //            var i = Items.IndexOf(newValue);
+    //            if (i > 0) throw new KeyNotFoundException("The item you requested to select is not found in the list");
+    //            PrimarySelectedIndex = i;
+    //        }
+
+    //    }
+    //}
 }
 
 
@@ -96,5 +161,5 @@ public abstract class OneWaySelectableItemsTemplatedControl<T, TElement>
     : SelectableItemsTemplatedControlBase<T, TElement, IUpdateReadOnlyCollection<T>, OneWayUpdateCollectionProperty<T>>
     where TElement : DependencyObject;
 public abstract class TwoWaySelectableItemsTemplatedControl<T, TElement>
-    : SelectableItemsTemplatedControlBase<T, TElement, IUpdateReadOnlyCollection<T>, OneWayUpdateCollectionProperty<T>>
+    : SelectableItemsTemplatedControlBase<T, TElement, IUpdateCollection<T>, TwoWayUpdateCollectionProperty<T>>
     where TElement : DependencyObject;

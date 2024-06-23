@@ -47,6 +47,6 @@ public abstract class OneWayItemsTemplatedControlBase<T, TTemplate, TElement>
     where TElement : DependencyObject;
 
 public abstract class TwoWayItemsTemplatedControlBase<T, TTemplate, TElement>
-    : ItemsTemplatedControlBase<T, TTemplate, TElement, IUpdateReadOnlyCollection<T>, TwoWayUpdateCollectionProperty<T>>
+    : ItemsTemplatedControlBase<T, TTemplate, TElement, IUpdateCollection<T>, TwoWayUpdateCollectionProperty<T>>
     where TTemplate : class
     where TElement : DependencyObject;

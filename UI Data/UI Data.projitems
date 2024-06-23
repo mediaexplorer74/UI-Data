@@ -9,6 +9,18 @@
     <Import_RootNamespace>UI Data</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Disposable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ExternalControlTemplate.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Get.Data.WinUI.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GlobalUsings.Shared.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ItemsControl\ItemsControl.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ItemsControl\SelectableItemsControl.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ItemsTemplatedControl\ItemsTemplatedControl.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ItemsTemplatedControl\ItemsTemplatedControlBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ItemsTemplatedControl\SelectableItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ItemsTemplatedControl\SelectableItemsTemplatedControl.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)templatedcontentcontrol\TemplatedContentControl.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TemplatedControl\TemplatedControl.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TypedContentControl.cs" />
   </ItemGroup>
 </Project>

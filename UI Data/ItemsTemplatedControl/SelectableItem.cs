@@ -1,6 +1,7 @@
 using Get.Data.Bindings;
 using Get.Data;
 using Get.Data.Properties;
+using Get.Data.Bindings.Linq;
 
 namespace Get.UI.Data;
 public class SelectableItem<T>(IReadOnlyBinding<IndexItem<T>> itemBinding, Property<int> sourceIdxProperty)
