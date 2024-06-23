@@ -4,7 +4,7 @@ using Get.Data.Collections.Update;
 using Get.Data.Collections;
 
 namespace Get.UI.Data;
-public class ItemsControl<T>(UIElement element, IGDCollection<UIElement> children) : ItemsTemplatedControl<T, UserControl>
+public class ItemsControl<T>(UIElement element, IGDCollection<UIElement> children) : OneWayItemsTemplatedControl<T, UserControl>
 {
     public ItemsControl(UIElement element, IList<UIElement> children)
         : this(element, children.AsGDCollection()) { }

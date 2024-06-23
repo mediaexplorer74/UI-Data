@@ -7,7 +7,7 @@ public abstract class TypedTemplateContentControl<TContent, TTargetElement, TRoo
     : TemplateControl<TRootElement>
     where TRootElement : DependencyObject
 {
-    public Property<DataTemplate<TContent, TTargetElement>?> ContentTemplateProperty { get; } = new(null);
+    public Property<IDataTemplate<TContent, TTargetElement>?> ContentTemplateProperty { get; } = new(null);
     public IDataTemplate<TContent, TTargetElement>? ContentTemplate
     {
         get => ContentTemplateProperty.Value;

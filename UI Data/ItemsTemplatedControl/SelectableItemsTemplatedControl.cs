@@ -10,11 +10,13 @@ using Get.Data.Bindings.Linq;
 
 namespace Get.UI.Data;
 
-public abstract class SelectableItemsTemplatedControl<T, TElement> :
-    ItemsTemplatedControlBase<T, DataTemplate<SelectableItem<T>, UIElement>, TElement>
+public abstract class SelectableItemsTemplatedControlBase<T, TElement, TCollectionType, TUpdateCollectionProperty> :
+    ItemsTemplatedControlBase<T, IDataTemplate<SelectableItem<T>, UIElement>, TElement, TCollectionType, TUpdateCollectionProperty>
     where TElement : DependencyObject
+    where TCollectionType : IUpdateReadOnlyCollection<T>
+    where TUpdateCollectionProperty : UpdateCollectionPropertyBase<T, TCollectionType>, IUpdateReadOnlyCollection<T>, new()
 {
-    public SelectableItemsTemplatedControl()
+    public SelectableItemsTemplatedControlBase()
     {
         SelectedValueProperty = new(_SelectedValueProperty);
         SelectedIndexProperty.ValueChanged += SelectedIndexProperty_ValueChanged;
@@ -64,9 +66,6 @@ public abstract class SelectableItemsTemplatedControl<T, TElement> :
         else
             _SelectedValueProperty.Value = default;
     }
-
-    public static PropertyDefinition<SelectableItemsControl<T>, int> SelectedIndexPropertyDefnition { get; } = new(x => x.SelectedIndexProperty);
-    public static ReadOnlyPropertyDefinition<SelectableItemsControl<T>, T?> SelectedValuePropertyDefnition { get; } = new(x => x.SelectedValueProperty);
     public Property<int> SelectedIndexProperty { get; } = new(-1);
 
     readonly Property<T?> _SelectedValueProperty = new(default);
@@ -76,8 +75,7 @@ public abstract class SelectableItemsTemplatedControl<T, TElement> :
     public T? SelectedValue => _SelectedValueProperty.Value;
 
     readonly UpdateCollection<SelectableItem<T>> tempCollection = new();
-    public static PropertyDefinition<SelectableItemsControl<T>, IUpdateReadOnlyCollection<T>> ItemsSourcePropertyDefinition { get; } = new(x => x.ItemsSourceProperty);
-    protected override IDisposable Bind(OneWayUpdateCollectionProperty<T> collection, IGDCollection<UIElement> @out, DataTemplate<SelectableItem<T>, UIElement> dataTemplate)
+    protected override IDisposable Bind(TUpdateCollectionProperty collection, IGDCollection<UIElement> @out, IDataTemplate<SelectableItem<T>, UIElement> dataTemplate)
     {
         tempCollection.Clear();
         var a = collection.AsUpdateReadOnly().WithIndex().Bind(tempCollection,
@@ -93,3 +91,10 @@ public abstract class SelectableItemsTemplatedControl<T, TElement> :
     }
 }
 
+
+public abstract class OneWaySelectableItemsTemplatedControl<T, TElement>
+    : SelectableItemsTemplatedControlBase<T, TElement, IUpdateReadOnlyCollection<T>, OneWayUpdateCollectionProperty<T>>
+    where TElement : DependencyObject;
+public abstract class TwoWaySelectableItemsTemplatedControl<T, TElement>
+    : SelectableItemsTemplatedControlBase<T, TElement, IUpdateReadOnlyCollection<T>, OneWayUpdateCollectionProperty<T>>
+    where TElement : DependencyObject;

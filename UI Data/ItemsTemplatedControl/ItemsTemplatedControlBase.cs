@@ -4,12 +4,14 @@ using Get.Data.Collections;
 using Get.Data.Properties;
 
 namespace Get.UI.Data;
-public abstract class ItemsTemplatedControlBase<T, TTemplate, TElement> : TemplateControl<TElement>
+public abstract class ItemsTemplatedControlBase<T, TTemplate, TElement, TCollectionType, TUpdateCollectionProperty> : TemplateControl<TElement>
     where TTemplate : class
     where TElement : DependencyObject
+    where TCollectionType : IUpdateReadOnlyCollection<T>
+    where TUpdateCollectionProperty : UpdateCollectionPropertyBase<T, TCollectionType>, IUpdateReadOnlyCollection<T>, new()
 {
-    public OneWayUpdateCollectionProperty<T> ItemsSourceProperty { get; } = new();
-    public IUpdateReadOnlyCollection<T> ItemsSource { get => ItemsSourceProperty.Value; set => ItemsSourceProperty.Value = value; }
+    public TUpdateCollectionProperty ItemsSourceProperty { get; } = new();
+    public TCollectionType ItemsSource { get => ItemsSourceProperty.Value; set => ItemsSourceProperty.Value = value; }
     public Property<TTemplate?> ItemTemplateProperty { get; } = new(null);
     public TTemplate? ItemTemplate
     {
@@ -36,5 +38,15 @@ public abstract class ItemsTemplatedControlBase<T, TTemplate, TElement> : Templa
         RefreshTemplate(ItemTemplate);
     }
     protected abstract IGDCollection<UIElement> InitializeWithChildren(TElement TemplatedParent);
-    protected abstract IDisposable Bind(OneWayUpdateCollectionProperty<T> collection, IGDCollection<UIElement> @out, TTemplate dataTemplate);
+    protected abstract IDisposable Bind(TUpdateCollectionProperty collection, IGDCollection<UIElement> @out, TTemplate dataTemplate);
 }
+
+public abstract class OneWayItemsTemplatedControlBase<T, TTemplate, TElement>
+    : ItemsTemplatedControlBase<T, TTemplate, TElement, IUpdateReadOnlyCollection<T>, OneWayUpdateCollectionProperty<T>>
+    where TTemplate : class
+    where TElement : DependencyObject;
+
+public abstract class TwoWayItemsTemplatedControlBase<T, TTemplate, TElement>
+    : ItemsTemplatedControlBase<T, TTemplate, TElement, IUpdateReadOnlyCollection<T>, TwoWayUpdateCollectionProperty<T>>
+    where TTemplate : class
+    where TElement : DependencyObject;
