@@ -10,11 +10,12 @@ using Get.Data.Bindings.Linq;
 
 namespace Get.UI.Data;
 
-public abstract class SelectableItemsTemplatedControlBase<T, TElement, TCollectionType, TUpdateCollectionProperty> :
-    ItemsTemplatedControlBase<T, IDataTemplate<SelectableItem<T>, UIElement>, TElement, TCollectionType, TUpdateCollectionProperty>
-    where TElement : DependencyObject
-    where TCollectionType : IUpdateReadOnlyCollection<T>
-    where TUpdateCollectionProperty : UpdateCollectionPropertyBase<T, TCollectionType>, IUpdateReadOnlyCollection<T>, new()
+public abstract class SelectableItemsTemplatedControlBase<TRootElement, TSrc, TTemplateElement, TCollectionType, TUpdateCollectionProperty> :
+    ItemsTemplatedControlBase<TRootElement, TSrc, TTemplateElement, IDataTemplate<SelectableItem<TSrc>, TTemplateElement>, TCollectionType, TUpdateCollectionProperty>
+    where TRootElement : DependencyObject
+    where TTemplateElement : UIElement
+    where TCollectionType : IUpdateReadOnlyCollection<TSrc>
+    where TUpdateCollectionProperty : UpdateCollectionPropertyBase<TSrc, TCollectionType>, IUpdateReadOnlyCollection<TSrc>, new()
 {
     public SelectableItemsTemplatedControlBase()
     {
@@ -33,18 +34,18 @@ public abstract class SelectableItemsTemplatedControlBase<T, TElement, TCollecti
         };
     }
 
-    private void ItemsSourceProperty_ItemsChanged(IEnumerable<IUpdateAction<T>> actions)
+    private void ItemsSourceProperty_ItemsChanged(IEnumerable<IUpdateAction<TSrc>> actions)
     {
         foreach (var action in actions)
         {
 
             switch (action)
             {
-                case ItemsAddedUpdateAction<T> added:
+                case ItemsAddedUpdateAction<TSrc> added:
                     if (added.StartingIndex <= SelectedIndex)
                         SelectedIndex += added.Items.Count;
                     break;
-                case ItemsRemovedUpdateAction<T> removed:
+                case ItemsRemovedUpdateAction<TSrc> removed:
                     if (removed.StartingIndex <= SelectedIndex)
                     {
                         if (SelectedIndex >= removed.StartingIndex + removed.Items.Count)
@@ -54,11 +55,11 @@ public abstract class SelectableItemsTemplatedControlBase<T, TElement, TCollecti
                             SelectedIndex = -1;
                     }
                     break;
-                case ItemsMovedUpdateAction<T> moved:
+                case ItemsMovedUpdateAction<TSrc> moved:
                     if (SelectedIndex == moved.OldIndex) SelectedIndex = moved.NewIndex;
                     else if (SelectedIndex == moved.NewIndex) SelectedIndex = moved.OldIndex;
                     break;
-                case ItemsReplacedUpdateAction<T> replaced:
+                case ItemsReplacedUpdateAction<TSrc> replaced:
                     if (SelectedIndex == replaced.Index) SelectedIndex = -1;
                     break;
             }
@@ -81,18 +82,19 @@ public abstract class SelectableItemsTemplatedControlBase<T, TElement, TCollecti
     public Property<bool> PreferAlwaysSelectItemProperty { get; } = new(false);
     public Property<int> SelectedIndexProperty { get; } = new(-1);
 
-    readonly Property<T?> _SelectedValueProperty = new(default);
+    readonly Property<TSrc?> _SelectedValueProperty = new(default);
 
     public int SelectedIndex { get => SelectedIndexProperty.Value; set => SelectedIndexProperty.Value = value; }
-    public ReadOnlyProperty<T?> SelectedValueProperty { get; }
-    public T? SelectedValue => _SelectedValueProperty.Value;
+    public bool PreferAlwaysSelectItem { get => PreferAlwaysSelectItemProperty.Value; set => PreferAlwaysSelectItemProperty.Value = value; }
+    public ReadOnlyProperty<TSrc?> SelectedValueProperty { get; }
+    public TSrc? SelectedValue => _SelectedValueProperty.Value;
 
-    readonly UpdateCollection<SelectableItem<T>> tempCollection = new();
-    protected override IDisposable Bind(TUpdateCollectionProperty collection, IGDCollection<UIElement> @out, IDataTemplate<SelectableItem<T>, UIElement> dataTemplate)
+    readonly UpdateCollection<SelectableItem<TSrc>> tempCollection = new();
+    protected override IDisposable Bind(TUpdateCollectionProperty collection, IGDCollection<TTemplateElement> @out, IDataTemplate<SelectableItem<TSrc>, TTemplateElement> dataTemplate)
     {
         tempCollection.Clear();
         var a = collection.AsUpdateReadOnly().WithIndex().Bind(tempCollection,
-            new DataTemplateWithIndex<T, SelectableItem<T>>(root => new(root, SelectedIndexProperty))
+            new DataTemplateWithIndex<TSrc, SelectableItem<TSrc>>(root => new(root, SelectedIndexProperty))
         );
         var b = tempCollection.Bind(@out, dataTemplate);
         return new Disposable(() =>
@@ -102,7 +104,7 @@ public abstract class SelectableItemsTemplatedControlBase<T, TElement, TCollecti
             tempCollection.Clear();
         });
     }
-    //partial void OnPrimarySelectedItemChanged(T oldValue, T newValue)
+    //partial void OnPrimarySelectedItemChanged(TSrc oldValue, TSrc newValue)
     //{
     //    if (oldValue == newValue) return;
     //    if (IsLoaded)
@@ -157,9 +159,11 @@ public abstract class SelectableItemsTemplatedControlBase<T, TElement, TCollecti
 }
 
 
-public abstract class OneWaySelectableItemsTemplatedControl<T, TElement>
-    : SelectableItemsTemplatedControlBase<T, TElement, IUpdateReadOnlyCollection<T>, OneWayUpdateCollectionProperty<T>>
-    where TElement : DependencyObject;
-public abstract class TwoWaySelectableItemsTemplatedControl<T, TElement>
-    : SelectableItemsTemplatedControlBase<T, TElement, IUpdateCollection<T>, TwoWayUpdateCollectionProperty<T>>
-    where TElement : DependencyObject;
+public abstract class OneWaySelectableItemsTemplatedControl<TRootElement, TSrc, TTemplateElement>
+    : SelectableItemsTemplatedControlBase<TRootElement, TSrc, TTemplateElement, IUpdateReadOnlyCollection<TSrc>, OneWayUpdateCollectionProperty<TSrc>>
+    where TRootElement : DependencyObject
+    where TTemplateElement : UIElement;
+public abstract class TwoWaySelectableItemsTemplatedControl<TRootElement, TSrc, TTemplateElement>
+    : SelectableItemsTemplatedControlBase<TRootElement, TSrc, TTemplateElement, IUpdateCollection<TSrc>, TwoWayUpdateCollectionProperty<TSrc>>
+    where TRootElement : DependencyObject
+    where TTemplateElement : UIElement;

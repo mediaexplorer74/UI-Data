@@ -3,7 +3,7 @@ using Get.Data.Collections;
 
 namespace Get.UI.Data;
 
-public class SelectableItemsControl<T>(UIElement element, IGDCollection<UIElement> children) : OneWaySelectableItemsTemplatedControl<T, UserControl>
+public class SelectableItemsControl<T>(UIElement element, IGDCollection<UIElement> children) : OneWaySelectableItemsTemplatedControl<UserControl, T, UIElement>
 {
     public SelectableItemsControl(UIElement element, IList<UIElement> children)
         : this(element, children.AsGDCollection()) { }
