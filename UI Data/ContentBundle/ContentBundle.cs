@@ -19,7 +19,7 @@ public class ContentBundle<TIn, TOut> : ContentBundle<TOut>
     where TOut : UIElement
 {
     public Property<TIn?> ContentProperty { get; } = new(default);
-    public Property<DataTemplate<TIn,TOut>?> ContentTemplateProperty { get; } = new(default);
+    public Property<IDataTemplate<TIn,TOut>?> ContentTemplateProperty { get; } = new(default);
     Property<TOut?> OutElement { get; } = new(null);
 
     internal override IReadOnlyProperty<TOut> TypedOutputContent => OutElement;
@@ -29,7 +29,7 @@ public class ContentBundle<TIn, TOut> : ContentBundle<TOut>
     public ContentBundle()
     {
         var prop = new Property<UIElement?>(default);
-        prop.Bind(OutElement.Select<TOut, UIElement>(x => x), ReadOnlyBindingModes.OneTime);
+        prop.Bind(OutElement.Select<TOut, UIElement>(x => x), ReadOnlyBindingModes.OneWay);
         OutputContent = prop;
         ContentTemplateProperty.ValueChanged += (old, @new) =>
         {

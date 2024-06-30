@@ -6,7 +6,7 @@ using Get.Data.Collections.Conversion;
 
 namespace Get.UI.Data;
 
-public class ItemsBundleControl<T> : TemplateControl<T> where T : Panel
+public class ItemsBundleControl<T> : TemplateControl<T> where T : Panel, new()
 {
     public Property<ReadOnlyItemsBundle<UIElement>?> ItemsBundleProperty { get; } = new(default);
     IDisposable? disposable;

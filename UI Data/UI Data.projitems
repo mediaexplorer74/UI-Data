@@ -28,7 +28,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)ItemsTemplatedControl\SelectableItem.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ItemsTemplatedControl\SelectableItemsTemplatedControl.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)templatedcontentcontrol\TemplatedContentControl.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)templatedcontrol\NamedPanel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TemplatedControl\TemplatedControl.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)TypedContentControl.cs" />
   </ItemGroup>
 </Project>

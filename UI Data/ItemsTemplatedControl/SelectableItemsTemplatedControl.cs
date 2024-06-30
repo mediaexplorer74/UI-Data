@@ -12,7 +12,7 @@ namespace Get.UI.Data;
 
 public abstract class SelectableItemsTemplatedControlBase<TRootElement, TSrc, TTemplateElement, TCollectionType, TUpdateCollectionProperty> :
     ItemsTemplatedControlBase<TRootElement, TSrc, TTemplateElement, IDataTemplate<SelectableItem<TSrc>, TTemplateElement>, TCollectionType, TUpdateCollectionProperty>
-    where TRootElement : DependencyObject
+    where TRootElement : UIElement, new()
     where TTemplateElement : UIElement
     where TCollectionType : IUpdateReadOnlyCollection<TSrc>
     where TUpdateCollectionProperty : UpdateCollectionPropertyBase<TSrc, TCollectionType>, IUpdateReadOnlyCollection<TSrc>, new()
@@ -161,9 +161,9 @@ public abstract class SelectableItemsTemplatedControlBase<TRootElement, TSrc, TT
 
 public abstract class OneWaySelectableItemsTemplatedControl<TRootElement, TSrc, TTemplateElement>
     : SelectableItemsTemplatedControlBase<TRootElement, TSrc, TTemplateElement, IUpdateReadOnlyCollection<TSrc>, OneWayUpdateCollectionProperty<TSrc>>
-    where TRootElement : DependencyObject
+    where TRootElement : UIElement, new()
     where TTemplateElement : UIElement;
 public abstract class TwoWaySelectableItemsTemplatedControl<TRootElement, TSrc, TTemplateElement>
     : SelectableItemsTemplatedControlBase<TRootElement, TSrc, TTemplateElement, IUpdateCollection<TSrc>, TwoWayUpdateCollectionProperty<TSrc>>
-    where TRootElement : DependencyObject
+    where TRootElement : UIElement, new()
     where TTemplateElement : UIElement;

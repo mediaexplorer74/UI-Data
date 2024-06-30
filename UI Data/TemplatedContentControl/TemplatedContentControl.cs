@@ -5,22 +5,17 @@ namespace Get.UI.Data;
 
 public abstract class TypedTemplateContentControl<TContent, TTargetElement, TRootElement>
     : TemplateControl<TRootElement>
-    where TRootElement : DependencyObject
+    where TRootElement : UIElement, new()
+    where TTargetElement : UIElement
 {
-    public Property<IDataTemplate<TContent, TTargetElement>?> ContentTemplateProperty { get; } = new(null);
-    public IDataTemplate<TContent, TTargetElement>? ContentTemplate
+    public Property<ContentBundle<TContent, TTargetElement>?> ContentBundleProperty { get; } = new(null);
+    public ContentBundle<TContent, TTargetElement>? ContentBundle
     {
-        get => ContentTemplateProperty.Value;
-        set => ContentTemplateProperty.Value = value;
-    }
-    public Property<TContent?> ContentProperty { get; } = new(default);
-    public TContent? Content
-    {
-        get => ContentProperty.Value;
-        set => ContentProperty.Value = value;
+        get => ContentBundleProperty.Value;
+        set => ContentBundleProperty.Value = value;
     }
 
 }
 public abstract class TypedTemplateContentControl<TContent, TRootElement> :
     TypedTemplateContentControl<TContent, UIElement, TRootElement>
-    where TRootElement : DependencyObject;
+    where TRootElement : UIElement, new();

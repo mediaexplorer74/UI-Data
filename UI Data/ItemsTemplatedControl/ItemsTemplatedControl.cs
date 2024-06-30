@@ -6,7 +6,7 @@ using Get.Data.Properties;
 namespace Get.UI.Data;
 public abstract class TwoWayItemsTemplatedControl<TRootElement, TSrc, TTemplateElement> :
     TwoWayItemsTemplatedControlBase<TRootElement, TSrc, TTemplateElement, DataTemplate<TSrc, TTemplateElement>>
-    where TRootElement : DependencyObject
+    where TRootElement : UIElement, new()
     where TTemplateElement : UIElement
 {
     protected sealed override IDisposable Bind(TwoWayUpdateCollectionProperty<TSrc> collection, IGDCollection<TTemplateElement> @out, DataTemplate<TSrc, TTemplateElement> dataTemplate)
@@ -15,7 +15,7 @@ public abstract class TwoWayItemsTemplatedControl<TRootElement, TSrc, TTemplateE
 
 public abstract class OneWayItemsTemplatedControl<TRootElement, TSrc, TTemplateElement> :
     OneWayItemsTemplatedControlBase<TRootElement, TSrc, TTemplateElement, DataTemplate<TSrc, TTemplateElement>>
-    where TRootElement : DependencyObject
+    where TRootElement : UIElement, new()
     where TTemplateElement : UIElement
 {
     protected sealed override IDisposable Bind(OneWayUpdateCollectionProperty<TSrc> collection, IGDCollection<TTemplateElement> @out, DataTemplate<TSrc, TTemplateElement> dataTemplate)

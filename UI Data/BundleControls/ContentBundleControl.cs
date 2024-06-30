@@ -8,9 +8,16 @@ namespace Get.UI.Data;
 public class ContentBundleControl : TemplateControl<Border>
 {
     public Property<ContentBundle?> ContentBundleProperty { get; } = new(default);
+    public ContentBundle ContentBundle
+    {
+        get => ContentBundleProperty.Value;
+        set => ContentBundleProperty.Value = value;
+    }
     protected override void Initialize(Border rootElement)
     {
-        var prop = ContentBundleProperty.SelectPath(x => x?.OutputContent ?? new NullProperty());
+        if (ContentBundleProperty.Value is null)
+            ContentBundleProperty.ValueChanged += (_, _) => Debugger.Break();
+        var prop = ContentBundleProperty.SelectPath(x => x.OutputContent);
         prop.ValueChanged += (_, child) => rootElement.Child = child;
         rootElement.Child = prop.CurrentValue;
     }

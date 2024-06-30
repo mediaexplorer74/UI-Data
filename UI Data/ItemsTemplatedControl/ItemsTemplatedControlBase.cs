@@ -9,7 +9,7 @@ namespace Get.UI.Data;
 public abstract class ItemsTemplatedControlBase<TRootElement, TSrc, TTemplateElement, TDataTemplate, TCollectionType, TUpdateCollectionProperty> : TemplateControl<TRootElement>
     where TDataTemplate : class
     where TTemplateElement : UIElement
-    where TRootElement : DependencyObject
+    where TRootElement : UIElement, new()
     where TCollectionType : IUpdateReadOnlyCollection<TSrc>
     where TUpdateCollectionProperty : UpdateCollectionPropertyBase<TSrc, TCollectionType>, IUpdateReadOnlyCollection<TSrc>, new()
 {
@@ -63,10 +63,10 @@ public abstract class OneWayItemsTemplatedControlBase<TRootElement, TSrc, TTempl
     : ItemsTemplatedControlBase<TRootElement, TSrc, TTemplateElement, TDataTemplate, IUpdateReadOnlyCollection<TSrc>, OneWayUpdateCollectionProperty<TSrc>>
     where TDataTemplate : class
     where TTemplateElement : UIElement
-    where TRootElement : DependencyObject;
+    where TRootElement : UIElement, new();
 
 public abstract class TwoWayItemsTemplatedControlBase<TRootElement, TSrc, TTemplateElement, TDataTemplate>
     : ItemsTemplatedControlBase<TRootElement, TSrc, TTemplateElement, TDataTemplate, IUpdateCollection<TSrc>, TwoWayUpdateCollectionProperty<TSrc>>
     where TDataTemplate : class
     where TTemplateElement : UIElement
-    where TRootElement : DependencyObject;
+    where TRootElement : UIElement, new();
