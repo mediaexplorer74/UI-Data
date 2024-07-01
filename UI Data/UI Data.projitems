@@ -30,5 +30,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)templatedcontentcontrol\TemplatedContentControl.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)templatedcontrol\NamedPanel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TemplatedControl\TemplatedControl.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ThemeResources.cs" />
   </ItemGroup>
 </Project>

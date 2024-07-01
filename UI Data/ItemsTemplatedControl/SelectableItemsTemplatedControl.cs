@@ -73,10 +73,25 @@ public abstract class SelectableItemsTemplatedControlBase<TRootElement, TSrc, TT
         else
             _SelectedValueProperty.Value = default;
 
-        if (newValue is < 0 && PreferAlwaysSelectItemProperty.Value && ItemsSourceProperty.Count > 0)
+        if (!PausePreferAlwaysSelectItemProperty && newValue is < 0 && PreferAlwaysSelectItemProperty.Value && ItemsSourceProperty.Count > 0)
         {
             var guessNewIndex = Math.Clamp(oldValue - 1, 0, ItemsSourceProperty.Count - 1);
             SelectedIndex = guessNewIndex;
+        }
+    }
+    bool _PausePreferAlwaysSelectItemProperty;
+    protected bool PausePreferAlwaysSelectItemProperty {
+        get => _PausePreferAlwaysSelectItemProperty;
+        set
+        {
+            _PausePreferAlwaysSelectItemProperty = value;
+            if (value == false)
+            {
+                if (SelectedIndex is < 0 && PreferAlwaysSelectItemProperty.Value && ItemsSourceProperty.Count > 0)
+                {
+                    SelectedIndex = 0;
+                }
+            }
         }
     }
     public Property<bool> PreferAlwaysSelectItemProperty { get; } = new(false);
