@@ -21,6 +21,11 @@ public abstract class SelectableItemsTemplatedControlBase<TRootElement, TSrc, TT
     {
         SelectedValueProperty = new(_SelectedValueProperty);
         SelectedIndexProperty.ValueChanged += SelectedIndexProperty_ValueChanged;
+        ItemsSourceProperty.ValueChanged += (old, @new) =>
+        {
+            if (@new is null || SelectedIndexProperty.Value >= @new.Count)
+                SelectedIndexProperty.Value = -1;
+        };
         ItemsSourceProperty.ItemsChanged += ItemsSourceProperty_ItemsChanged;
         PreferAlwaysSelectItemProperty.ValueChanged += (old, @new) =>
         {
