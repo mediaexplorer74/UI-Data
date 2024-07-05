@@ -13,3 +13,4 @@ global using Windows.System;
 global using Microsoft.UI.Xaml.Markup;
 global using Microsoft.UI.Input;
 global using Microsoft.UI.Xaml.Hosting;
+global using Platform = Microsoft;

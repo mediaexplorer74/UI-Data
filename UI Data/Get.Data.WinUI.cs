@@ -3,6 +3,7 @@ using System.Runtime.CompilerServices;
 using Get.Data.DataTemplates;
 using Get.Data.Collections.Conversion;
 using Get.Data.XACL;
+using Get.Data.Collections.Implementation;
 
 namespace Get.Data.Properties
 {
@@ -63,7 +64,7 @@ namespace Get.Data.Collections.Conversion
     {
         public static IGDCollection<UIElement> AsGDCollection(this UIElementCollection c)
         => new UIElementCollectionGDCollection(c);
-        readonly struct UIElementCollectionGDCollection(UIElementCollection c) : IGDCollection<UIElement>, Get.Data.Collections.Implementation.IMoveImplGDCollection<UIElement>
+        readonly struct UIElementCollectionGDCollection(UIElementCollection c) : IGDCollection<UIElement>, IMoveImplGDCollection
         {
             public UIElement this[int index] { get => c[index]; set => c[index] = value; }
 
