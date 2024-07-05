@@ -1,0 +1,3 @@
+[submodule "Get.Data"]
+	path = Get.Data
+	url = https://github.com/GetGet99/Get.Data.git
