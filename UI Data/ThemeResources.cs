@@ -1,4 +1,5 @@
 using Get.Data.Properties;
+using static Get.Data.Properties.AutoTyper;
 namespace Get.UI.Data;
 public class ThemeResources
 {
@@ -11,6 +12,6 @@ public class ThemeResources
             if (!ele.Resources.TryGetValue(resourcesName, out var val)) val = Application.Current.Resources[resourcesName];
             prop.Value = (T)val;
         };
-        return prop;
+        return AutoReadOnly<T>(prop);
     }
 }

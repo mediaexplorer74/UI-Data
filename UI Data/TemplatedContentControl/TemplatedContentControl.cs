@@ -1,20 +1,17 @@
+#nullable enable
 using Get.Data.Bundles;
-using Get.Data.DataTemplates;
 using Get.Data.Properties;
+using static Get.Data.Properties.AutoTyper;
 
 namespace Get.UI.Data;
-
-public abstract class TypedTemplateContentControl<TContent, TTargetElement, TRootElement>
+[AutoProperty]
+public abstract partial class TypedTemplateContentControl<TContent, TTargetElement, TRootElement>
     : TemplateControl<TRootElement>
     where TRootElement : UIElement, new()
     where TTargetElement : UIElement
 {
-    public Property<ContentBundle<TContent, TTargetElement>?> ContentBundleProperty { get; } = new(null);
-    public ContentBundle<TContent, TTargetElement>? ContentBundle
-    {
-        get => ContentBundleProperty.Value;
-        set => ContentBundleProperty.Value = value;
-    }
+    public IProperty<ContentBundle<TContent, TTargetElement>?> ContentBundleProperty { get; }
+        = Auto<ContentBundle<TContent, TTargetElement>?>(null);
 
 }
 public abstract class TypedTemplateContentControl<TContent, TRootElement> :

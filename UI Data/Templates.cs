@@ -37,7 +37,7 @@ public static class DataTemplates
         }
         readonly struct Wrapper(IDataTemplate<TIn, TNewOut> parent, IDataTemplateGeneratedValue<TIn, TOldOut> old, Func<TOldOut, TNewOut> converter) : IDataTemplateGeneratedValue<TIn, TNewOut>
         {
-            public IDataTemplateGeneratedValue<TIn, TOldOut> Old { get; } = old;
+            public IDataTemplateGeneratedValue<TIn, TOldOut> Old => old;
             public IReadOnlyBinding<TIn> Binding { get => Old.Binding; set => Old.Binding = value; }
 
             public IDataTemplate<TIn, TNewOut> Template => parent;

@@ -4,6 +4,7 @@ using Get.Data.DataTemplates;
 using Get.Data.Collections.Conversion;
 using Get.Data.XACL;
 using Get.Data.Collections.Implementation;
+using Get.Data.Bindings;
 
 namespace Get.Data.Properties
 {
@@ -37,8 +38,8 @@ namespace Get.Data.Properties
         TTargetType _Value;
         public override TTargetType Value { get => _Value; set => owner.SetValue(dp, value); }
 
-        public override event ValueChangingHandler<TTargetType> ValueChanging;
-        public override event ValueChangedHandler<TTargetType> ValueChanged;
+        public override event ValueChangingHandler<TTargetType>? ValueChanging;
+        public override event ValueChangedHandler<TTargetType>? ValueChanged;
         public void Dispose()
         {
             owner.UnregisterPropertyChangedCallback(dp, token);
