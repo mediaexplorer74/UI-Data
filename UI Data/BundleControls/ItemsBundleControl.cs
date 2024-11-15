@@ -10,7 +10,7 @@ namespace Get.UI.Data;
 [AutoProperty]
 public partial class ItemsBundleControl<T> : TemplateControl<T> where T : Panel, new()
 {
-    public IProperty<IReadOnlyItemsBundle<UIElement>?> ItemsBundleProperty { get; } = Auto< IReadOnlyItemsBundle<UIElement>?>(default);
+    public IProperty<IReadOnlyItemsBundle<UIElement>?> ItemsBundleProperty { get; } = Auto<IReadOnlyItemsBundle<UIElement>?>(default);
     IDisposable? disposable;
     protected override void Initialize(T rootElement)
     {
