@@ -1,4 +1,5 @@
 using Get.Data.Bindings;
+using Get.Data.Bindings.Linq;
 using Get.Data.DataTemplates;
 using Get.Data.Helpers;
 using Get.Data.Properties;
@@ -16,6 +17,10 @@ public static class DataTemplates
                 .Bind(converter(root), ReadOnlyBindingModes.OneWay)
             )
         );
+    public static IDataTemplate<T, TextBlock> TextBlock<T>()
+        => TextBlock<T>(x => x.Select(x => x?.ToString() ?? ""));
+    public static IDataTemplate<T, UIElement> TextBlockUIElement<T>()
+        => TextBlock<T>().As(x => (UIElement)x);
     public static IDataTemplate<TIn, TNewOut> As<TIn, TOldOut, TNewOut>(this IDataTemplate<TIn, TOldOut> dataTemplate, Func<TOldOut, TNewOut> converter)
         => new DataTemplateAs<TIn, TOldOut, TNewOut>(dataTemplate, converter);
     public static IDataTemplate<TIn, TNewOut> As<TIn, TOldOut, TNewOut>(this IDataTemplate<TIn, TOldOut> dataTemplate)

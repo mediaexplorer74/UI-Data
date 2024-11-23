@@ -42,7 +42,10 @@ namespace Get.Data.Properties
         public override event ValueChangedHandler<TTargetType>? ValueChanged;
         public void Dispose()
         {
-            owner.UnregisterPropertyChangedCallback(dp, token);
+            try
+            {
+                owner.UnregisterPropertyChangedCallback(dp, token);
+            } catch (ObjectDisposedException) { }
         }
         ~DPPropertyWrapper() => Dispose();
     }

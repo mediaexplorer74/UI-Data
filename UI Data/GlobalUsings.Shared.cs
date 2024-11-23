@@ -2,6 +2,9 @@ global using System;
 global using System.Linq;
 global using System.Diagnostics.CodeAnalysis;
 global using System.Diagnostics;
+global using static Get.Data.Properties.AutoTyper;
+global using static Get.Data.XACL.QuickBindingExtension;
+global using static Get.UI.Data.QuickCreate;
 using System.Runtime.InteropServices;
 
 namespace Get.UI.Data;
