@@ -42,6 +42,7 @@ namespace Get.Data.Properties
         public override event ValueChangedHandler<TTargetType>? ValueChanged;
         public void Dispose()
         {
+            GC.SuppressFinalize(this);
             try
             {
                 owner.UnregisterPropertyChangedCallback(dp, token);

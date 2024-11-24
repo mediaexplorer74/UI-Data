@@ -11,6 +11,8 @@ public partial class ContentBundleControl : TemplateControl<Border>
     public IProperty<IContentBundle<UIElement>?> ContentBundleProperty { get; } = Auto<IContentBundle<UIElement>?>(default);
     protected override void Initialize(Border rootElement)
     {
+        if (Tag is "Debug")
+            Debugger.Break();
         var prop = ContentBundleProperty.SelectPath(x => x!.OutputContent);
         prop.ValueChanged += (_, child) => rootElement.Child = child;
         rootElement.Child = prop.CurrentValue;

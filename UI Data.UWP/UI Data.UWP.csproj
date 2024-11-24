@@ -30,11 +30,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="../Get.Data/Get.Data/Get.Data.csproj" />
-		<ProjectReference Include="../Get.Data/Get.Data.SourceGenerators/Get.Data.SourceGenerators.csproj" ReferenceOutputAssembly="False" OutputItemType="Analyzer" />
+		<PackageReference Include="Get.Data" Version="1.1.2" />
+		<PackageReference Include="Get.Data.SourceGenerators" Version="1.1.1" />
 		<PackageReference Include="Microsoft.UI.Xaml" Version="2.8.6" />
 		<PackageReference Include="PolySharp" Version="1.14.1" PrivateAssets="all" />
 		<PackageReference Include="Win2D.uwp" Version="1.28.0-preview1" />
 	</ItemGroup>
+
 	<Import Project="..\UI Data\UI Data.projitems" Label="Shared" />
 </Project>

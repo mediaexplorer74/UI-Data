@@ -4,11 +4,11 @@ namespace Get.UI.Data;
 [AutoProperty]
 public partial class UIElementContentControl : TemplateControl<Border>
 {
-    public IProperty<UIElement?> Content { get; } = Auto<UIElement?>(null);
+    public IProperty<UIElement?> ContentProperty { get; } = Auto<UIElement?>(null);
 
     protected override void Initialize(Border rootElement)
     {
-        Content.ApplyAndRegisterForNewValue((_, x) =>
+        ContentProperty.ApplyAndRegisterForNewValue((_, x) =>
         {
             rootElement.Child = x;
         });
