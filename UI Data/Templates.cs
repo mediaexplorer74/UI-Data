@@ -26,7 +26,7 @@ public static class DataTemplates
     public static IDataTemplate<TIn, TNewOut> As<TIn, TOldOut, TNewOut>(this IDataTemplate<TIn, TOldOut> dataTemplate)
         where TOldOut : TNewOut
         => new DataTemplateAs<TIn, TOldOut, TNewOut>(dataTemplate, x => x);
-    public static DataTemplateHelper<TIn, TOut> GetHelper<TIn, TOut>(this IDataTemplate<TIn, TOut> dataTemplate)
+    public static DataTemplateHelper<TIn, TOut> DataTemplateHelper<TIn, TOut>(this IDataTemplate<TIn, TOut> dataTemplate)
         => new(dataTemplate);
     readonly struct DataTemplateAs<TIn, TOldOut, TNewOut>(IDataTemplate<TIn, TOldOut> input, Func<TOldOut, TNewOut> converter) : IDataTemplate<TIn, TNewOut>
     {
