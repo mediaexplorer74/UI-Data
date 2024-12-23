@@ -1,7 +1,7 @@
 
 namespace Get.UI.Data;
 
-public abstract class CachedTemplateControl<T> : TemplateControl<UserControl> where T : UIElement, new()
+public abstract partial class CachedTemplateControl<T> : TemplateControl<UserControl> where T : UIElement, new()
 {
     T? ele;
     protected sealed override void Initialize(UserControl rootElement)

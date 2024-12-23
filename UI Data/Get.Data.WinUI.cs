@@ -8,7 +8,7 @@ using Get.Data.Bindings;
 
 namespace Get.Data.Properties
 {
-    public class DependencyPropertyDefinition<TOwnerType, TTargetType>(DependencyProperty dp) : IPropertyDefinition<TOwnerType, TTargetType> where TOwnerType : DependencyObject
+    public partial class DependencyPropertyDefinition<TOwnerType, TTargetType>(DependencyProperty dp) : IPropertyDefinition<TOwnerType, TTargetType> where TOwnerType : DependencyObject
     {
         public IProperty<TTargetType> GetProperty(TOwnerType owner)
             => new DPPropertyWrapper<TOwnerType, TTargetType>(owner, dp);
@@ -16,7 +16,7 @@ namespace Get.Data.Properties
         IReadOnlyProperty<TTargetType> IReadOnlyPropertyDefinition<TOwnerType, TTargetType>.GetProperty(TOwnerType owner)
             => GetProperty(owner);
     }
-    public class DPPropertyWrapper<TOwnerType, TTargetType> : PropertyBase<TTargetType>, IDisposable where TOwnerType : DependencyObject
+    public partial class DPPropertyWrapper<TOwnerType, TTargetType> : PropertyBase<TTargetType>, IDisposable where TOwnerType : DependencyObject
     {
         readonly TOwnerType owner;
         readonly DependencyProperty dp;

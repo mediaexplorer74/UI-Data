@@ -2,7 +2,7 @@ using Get.Data.Properties;
 using System.Numerics;
 
 namespace Get.Data;
-public static class FrameworkElementProperties
+public static partial class FrameworkElementProperties
 {
     public static IReadOnlyPropertyDefinition<FrameworkElement, Vector2> ActualSizePropertyDefinition { get; } = new ActualSizePropertyDefinitionImpl();
     class ActualSizePropertyDefinitionImpl : IReadOnlyPropertyDefinition<FrameworkElement, Vector2>

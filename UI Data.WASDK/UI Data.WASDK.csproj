@@ -8,6 +8,10 @@
 		<UseWinUI>true</UseWinUI>
 		<Nullable>enable</Nullable>
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<Version>1.0.0</Version>
+		<RootNamespace>Get.UI.Data</RootNamespace>
+		<AssemblyName>Get.UI.Data.WASDK</AssemblyName>
+		<PackageOutputPath>D:\Programming\VS\.LocalNugetPackages</PackageOutputPath>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -17,8 +21,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Get.Data" Version="1.1.5" />
-		<PackageReference Include="Get.Data.SourceGenerators" Version="1.1.1" />
+		<PackageReference Include="Get.Data" Version="1.1.6" />
+		<PackageReference Include="Get.Data.SourceGenerators" Version="1.1.7" />
 	</ItemGroup>
 
 	<Import Project="..\UI Data\UI Data.projitems" Label="Shared" />

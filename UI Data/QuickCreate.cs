@@ -41,9 +41,9 @@ public static partial class QuickCreate
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void Add(UIElement item) => Children.Add(item);
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public IEnumerator<UIElement> GetEnumerator() => Children.GetEnumerator();
+        public IEnumerator<UIElement> GetEnumerator() => Children.AsEnumerable().GetEnumerator();
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        IEnumerator IEnumerable.GetEnumerator() => Children.GetEnumerator();
+        IEnumerator IEnumerable.GetEnumerator() => Children.AsEnumerable().GetEnumerator();
     }
     public partial class VStack : StackPanel, IEnumerable<UIElement>
     {
@@ -55,8 +55,8 @@ public static partial class QuickCreate
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void Add(UIElement item) => Children.Add(item);
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public IEnumerator<UIElement> GetEnumerator() => Children.GetEnumerator();
+        public IEnumerator<UIElement> GetEnumerator() => Children.AsEnumerable().GetEnumerator();
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        IEnumerator IEnumerable.GetEnumerator() => Children.GetEnumerator();
+        IEnumerator IEnumerable.GetEnumerator() => Children.AsEnumerable().GetEnumerator();
     }
 }

@@ -14,6 +14,3 @@ public abstract partial class TypedTemplateContentControl<TContent, TTargetEleme
         = Auto<ContentBundle<TContent, TTargetElement>?>(null);
 
 }
-public abstract class TypedTemplateContentControl<TContent, TRootElement> :
-    TypedTemplateContentControl<TContent, UIElement, TRootElement>
-    where TRootElement : UIElement, new();

@@ -4,11 +4,20 @@ using System.Text;
 
 namespace Get.Symbols;
 
-public class SymbolExIcon : FontIcon
+public partial class SymbolExIcon : FontIcon
 {
+    public static int? DefaultIconSize = null;
     public SymbolExIcon()
     {
-        FontFamily = (FontFamily)Resources["SymbolThemeFontFamily"];
+        if (DefaultIconSize.HasValue)
+            FontSize = DefaultIconSize.Value;
+        if (Resources["SymbolThemeFontFamily"] is FontFamily f)
+            FontFamily = f;
+        Loaded += delegate
+        {
+            if (Resources["SymbolThemeFontFamily"] is FontFamily f2)
+                FontFamily = f2;
+        };
     }
     public SymbolExIcon(SymbolEx SymbolEx) : this()
     {

@@ -7,7 +7,7 @@ using Microsoft.UI.Xaml;
 
 namespace Get.UI.Data;
 using WinUI = Platform.UI.Xaml.Controls;
-public static class DataTemplates
+public static partial class DataTemplates
 {
     public static IDataTemplate<T, TextBlock> TextBlock<T>(Func<RootBinding<T>, IReadOnlyBinding<string>> converter)
         => new DataTemplate<T, TextBlock>(

@@ -1,7 +1,7 @@
 using Get.Data.Properties;
 using static Get.Data.Properties.AutoTyper;
 namespace Get.UI.Data;
-public class ThemeResources
+public partial class ThemeResources
 {
     public static IReadOnlyProperty<T> Create<T>(string resourcesName, FrameworkElement ele)
     {

@@ -1,13 +1,14 @@
 ﻿
 namespace Get.UI.Data;
 
-public abstract class TemplateControl<T> : TemplatedControlBase where T : UIElement, new()
+public abstract partial class TemplateControl<T> : TemplatedControlBase where T : UIElement, new()
 {
 	readonly static ControlTemplate ControlTemplate = BuildTemplate<T>();
     public TemplateControl() : base(ControlTemplate)
     {
 		Name = $"{GetType().ToReadableString()} ({typeof(T).ToReadableString()})";
     }
+    protected bool IsAlreadyInitialized { get; private set; } = false;
     protected sealed override void OnApplyTemplate()
     {
         base.OnApplyTemplate();
@@ -21,6 +22,8 @@ public abstract class TemplateControl<T> : TemplatedControlBase where T : UIElem
             uc.Content = t;
             Initialize(t);
         }
+        IsAlreadyInitialized = true;
     }
 	protected abstract void Initialize(T rootElement);
+    protected virtual void SingleInitialize() { }
 }
