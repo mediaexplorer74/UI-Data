@@ -1,0 +1,927 @@
+{
+  "version": 3,
+  "targets": {
+    "net9.0-windows10.0.26100": {
+      "Get.Data/1.1.6": {
+        "type": "package",
+        "dependencies": {
+          "Get.Data.SourceGenerators": "1.1.6"
+        },
+        "compile": {
+          "lib/netstandard2.0/Get.Data.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Get.Data.dll": {}
+        }
+      },
+      "Get.Data.SourceGenerators/1.1.7": {
+        "type": "package"
+      },
+      "Microsoft.NET.ILLink.Tasks/9.0.0": {
+        "type": "package",
+        "build": {
+          "build/Microsoft.NET.ILLink.Tasks.props": {}
+        }
+      },
+      "Microsoft.UI.Xaml/2.8.7-prerelease.241119001": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Web.WebView2": "1.0.2849.39"
+        },
+        "compile": {
+          "lib/net8.0-windows10.0.22621.0/Microsoft.UI.Xaml.Projection.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.22621.0/Microsoft.UI.Xaml.Projection.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.Windows.SDK.NET.Ref.Xaml"
+        ],
+        "build": {
+          "buildTransitive/Microsoft.UI.Xaml.targets": {}
+        },
+        "runtimeTargets": {
+          "runtimes/win-arm/native/Microsoft.UI.Xaml.dll": {
+            "assetType": "native",
+            "rid": "win-arm"
+          },
+          "runtimes/win-arm/native/Microsoft.UI.Xaml.pri": {
+            "assetType": "native",
+            "rid": "win-arm"
+          },
+          "runtimes/win-arm/native/Microsoft.UI.Xaml/Assets/NoiseAsset_256x256_PNG.png": {
+            "assetType": "native",
+            "rid": "win-arm"
+          },
+          "runtimes/win-arm64/native/Microsoft.UI.Xaml.dll": {
+            "assetType": "native",
+            "rid": "win-arm64"
+          },
+          "runtimes/win-arm64/native/Microsoft.UI.Xaml.pri": {
+            "assetType": "native",
+            "rid": "win-arm64"
+          },
+          "runtimes/win-arm64/native/Microsoft.UI.Xaml/Assets/NoiseAsset_256x256_PNG.png": {
+            "assetType": "native",
+            "rid": "win-arm64"
+          },
+          "runtimes/win-x64/native/Microsoft.UI.Xaml.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/Microsoft.UI.Xaml.pri": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/Microsoft.UI.Xaml/Assets/NoiseAsset_256x256_PNG.png": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x86/native/Microsoft.UI.Xaml.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/Microsoft.UI.Xaml.pri": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/Microsoft.UI.Xaml/Assets/NoiseAsset_256x256_PNG.png": {
+            "assetType": "native",
+            "rid": "win-x86"
+          }
+        }
+      },
+      "Microsoft.Web.WebView2/1.0.2950-prerelease": {
+        "type": "package",
+        "build": {
+          "buildTransitive/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/win-x64/native/_._": {
+            "assetType": "native",
+            "rid": "win-x64"
+          }
+        }
+      },
+      "Microsoft.Windows.CsWinRT/2.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/WinRT.Runtime.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/WinRT.Runtime.dll": {}
+        },
+        "build": {
+          "build/Microsoft.Windows.CsWinRT.props": {},
+          "build/Microsoft.Windows.CsWinRT.targets": {}
+        }
+      }
+    },
+    "net9.0-windows10.0.26100/win-arm64": {
+      "Get.Data/1.1.6": {
+        "type": "package",
+        "dependencies": {
+          "Get.Data.SourceGenerators": "1.1.6"
+        },
+        "compile": {
+          "lib/netstandard2.0/Get.Data.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Get.Data.dll": {}
+        }
+      },
+      "Get.Data.SourceGenerators/1.1.7": {
+        "type": "package"
+      },
+      "Microsoft.NET.ILLink.Tasks/9.0.0": {
+        "type": "package",
+        "build": {
+          "build/Microsoft.NET.ILLink.Tasks.props": {}
+        }
+      },
+      "Microsoft.UI.Xaml/2.8.7-prerelease.241119001": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Web.WebView2": "1.0.2849.39"
+        },
+        "compile": {
+          "lib/net8.0-windows10.0.22621.0/Microsoft.UI.Xaml.Projection.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.22621.0/Microsoft.UI.Xaml.Projection.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.Windows.SDK.NET.Ref.Xaml"
+        ],
+        "native": {
+          "runtimes/win-arm64/native/Microsoft.UI.Xaml.dll": {},
+          "runtimes/win-arm64/native/Microsoft.UI.Xaml.pri": {},
+          "runtimes/win-arm64/native/Microsoft.UI.Xaml/Assets/NoiseAsset_256x256_PNG.png": {}
+        },
+        "build": {
+          "buildTransitive/Microsoft.UI.Xaml.targets": {}
+        }
+      },
+      "Microsoft.Web.WebView2/1.0.2950-prerelease": {
+        "type": "package",
+        "native": {
+          "runtimes/win-arm64/native/_._": {}
+        },
+        "build": {
+          "buildTransitive/_._": {}
+        }
+      },
+      "Microsoft.Windows.CsWinRT/2.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/WinRT.Runtime.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/WinRT.Runtime.dll": {}
+        },
+        "build": {
+          "build/Microsoft.Windows.CsWinRT.props": {},
+          "build/Microsoft.Windows.CsWinRT.targets": {}
+        }
+      }
+    },
+    "net9.0-windows10.0.26100/win-x64": {
+      "Get.Data/1.1.6": {
+        "type": "package",
+        "dependencies": {
+          "Get.Data.SourceGenerators": "1.1.6"
+        },
+        "compile": {
+          "lib/netstandard2.0/Get.Data.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Get.Data.dll": {}
+        }
+      },
+      "Get.Data.SourceGenerators/1.1.7": {
+        "type": "package"
+      },
+      "Microsoft.NET.ILLink.Tasks/9.0.0": {
+        "type": "package",
+        "build": {
+          "build/Microsoft.NET.ILLink.Tasks.props": {}
+        }
+      },
+      "Microsoft.UI.Xaml/2.8.7-prerelease.241119001": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Web.WebView2": "1.0.2849.39"
+        },
+        "compile": {
+          "lib/net8.0-windows10.0.22621.0/Microsoft.UI.Xaml.Projection.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.22621.0/Microsoft.UI.Xaml.Projection.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.Windows.SDK.NET.Ref.Xaml"
+        ],
+        "native": {
+          "runtimes/win-x64/native/Microsoft.UI.Xaml.dll": {},
+          "runtimes/win-x64/native/Microsoft.UI.Xaml.pri": {},
+          "runtimes/win-x64/native/Microsoft.UI.Xaml/Assets/NoiseAsset_256x256_PNG.png": {}
+        },
+        "build": {
+          "buildTransitive/Microsoft.UI.Xaml.targets": {}
+        }
+      },
+      "Microsoft.Web.WebView2/1.0.2950-prerelease": {
+        "type": "package",
+        "native": {
+          "runtimes/win-x64/native/_._": {}
+        },
+        "build": {
+          "buildTransitive/_._": {}
+        }
+      },
+      "Microsoft.Windows.CsWinRT/2.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/WinRT.Runtime.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/WinRT.Runtime.dll": {}
+        },
+        "build": {
+          "build/Microsoft.Windows.CsWinRT.props": {},
+          "build/Microsoft.Windows.CsWinRT.targets": {}
+        }
+      }
+    },
+    "net9.0-windows10.0.26100/win-x86": {
+      "Get.Data/1.1.6": {
+        "type": "package",
+        "dependencies": {
+          "Get.Data.SourceGenerators": "1.1.6"
+        },
+        "compile": {
+          "lib/netstandard2.0/Get.Data.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Get.Data.dll": {}
+        }
+      },
+      "Get.Data.SourceGenerators/1.1.7": {
+        "type": "package"
+      },
+      "Microsoft.NET.ILLink.Tasks/9.0.0": {
+        "type": "package",
+        "build": {
+          "build/Microsoft.NET.ILLink.Tasks.props": {}
+        }
+      },
+      "Microsoft.UI.Xaml/2.8.7-prerelease.241119001": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Web.WebView2": "1.0.2849.39"
+        },
+        "compile": {
+          "lib/net8.0-windows10.0.22621.0/Microsoft.UI.Xaml.Projection.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.22621.0/Microsoft.UI.Xaml.Projection.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.Windows.SDK.NET.Ref.Xaml"
+        ],
+        "native": {
+          "runtimes/win-x86/native/Microsoft.UI.Xaml.dll": {},
+          "runtimes/win-x86/native/Microsoft.UI.Xaml.pri": {},
+          "runtimes/win-x86/native/Microsoft.UI.Xaml/Assets/NoiseAsset_256x256_PNG.png": {}
+        },
+        "build": {
+          "buildTransitive/Microsoft.UI.Xaml.targets": {}
+        }
+      },
+      "Microsoft.Web.WebView2/1.0.2950-prerelease": {
+        "type": "package",
+        "native": {
+          "runtimes/win-x86/native/_._": {}
+        },
+        "build": {
+          "buildTransitive/_._": {}
+        }
+      },
+      "Microsoft.Windows.CsWinRT/2.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/WinRT.Runtime.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/WinRT.Runtime.dll": {}
+        },
+        "build": {
+          "build/Microsoft.Windows.CsWinRT.props": {},
+          "build/Microsoft.Windows.CsWinRT.targets": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Get.Data/1.1.6": {
+      "sha512": "S3hh0YxPRTC1xDt2ztz01vQ0idpKLI7FswdfbFCJNxuODRwnEvBIjjsCtgW/1me1Tv0BaRwXBk8kgvZeOO46Ag==",
+      "type": "package",
+      "path": "get.data/1.1.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "get.data.1.1.6.nupkg.sha512",
+        "get.data.nuspec",
+        "lib/netstandard2.0/Get.Data.dll"
+      ]
+    },
+    "Get.Data.SourceGenerators/1.1.7": {
+      "sha512": "wunJTx4mtE/ASCr1lzrN5YjBAL0A2TFSjloVopVQm/kRznbc5/8TkSM58FJ6AasUnMLRjwl9IwIl6/+JTddOgQ==",
+      "type": "package",
+      "path": "get.data.sourcegenerators/1.1.7",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "analyzers/dotnet/cs/Get.Data.SourceGenerators.dll",
+        "get.data.sourcegenerators.1.1.7.nupkg.sha512",
+        "get.data.sourcegenerators.nuspec"
+      ]
+    },
+    "Microsoft.NET.ILLink.Tasks/9.0.0": {
+      "sha512": "zAwp213evC3UkimtVXRb+Dlgc/40QG145nmZDtp2LO9zJJMfrp+i/87BnXN7tRXEA4liyzdFkjqG1HE8/RPb4A==",
+      "type": "package",
+      "path": "microsoft.net.illink.tasks/9.0.0",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "Sdk/Sdk.props",
+        "THIRD-PARTY-NOTICES.TXT",
+        "analyzers/dotnet/cs/ILLink.CodeFixProvider.dll",
+        "analyzers/dotnet/cs/ILLink.RoslynAnalyzer.dll",
+        "build/Microsoft.NET.ILLink.Analyzers.props",
+        "build/Microsoft.NET.ILLink.Tasks.props",
+        "build/Microsoft.NET.ILLink.targets",
+        "microsoft.net.illink.tasks.9.0.0.nupkg.sha512",
+        "microsoft.net.illink.tasks.nuspec",
+        "tools/net472/ILLink.Tasks.dll",
+        "tools/net472/ILLink.Tasks.dll.config",
+        "tools/net472/Mono.Cecil.Mdb.dll",
+        "tools/net472/Mono.Cecil.Pdb.dll",
+        "tools/net472/Mono.Cecil.Rocks.dll",
+        "tools/net472/Mono.Cecil.dll",
+        "tools/net472/Sdk/Sdk.props",
+        "tools/net472/System.Buffers.dll",
+        "tools/net472/System.Collections.Immutable.dll",
+        "tools/net472/System.Memory.dll",
+        "tools/net472/System.Numerics.Vectors.dll",
+        "tools/net472/System.Reflection.Metadata.dll",
+        "tools/net472/System.Runtime.CompilerServices.Unsafe.dll",
+        "tools/net472/build/Microsoft.NET.ILLink.Analyzers.props",
+        "tools/net472/build/Microsoft.NET.ILLink.Tasks.props",
+        "tools/net472/build/Microsoft.NET.ILLink.targets",
+        "tools/net9.0/ILLink.Tasks.deps.json",
+        "tools/net9.0/ILLink.Tasks.dll",
+        "tools/net9.0/Mono.Cecil.Mdb.dll",
+        "tools/net9.0/Mono.Cecil.Pdb.dll",
+        "tools/net9.0/Mono.Cecil.Rocks.dll",
+        "tools/net9.0/Mono.Cecil.dll",
+        "tools/net9.0/Sdk/Sdk.props",
+        "tools/net9.0/build/Microsoft.NET.ILLink.Analyzers.props",
+        "tools/net9.0/build/Microsoft.NET.ILLink.Tasks.props",
+        "tools/net9.0/build/Microsoft.NET.ILLink.targets",
+        "tools/net9.0/illink.deps.json",
+        "tools/net9.0/illink.dll",
+        "tools/net9.0/illink.runtimeconfig.json",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "Microsoft.UI.Xaml/2.8.7-prerelease.241119001": {
+      "sha512": "XuMfIMVLR0XpKfldmIe/cGyI+pogWMC/+hTmSpXr9HLCbeR6gmXZFjP7pHIaRGvAEbr8znMBASAPJctl3BUcUA==",
+      "type": "package",
+      "path": "microsoft.ui.xaml/2.8.7-prerelease.241119001",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/Microsoft.UI.Xaml.targets",
+        "build/native/Microsoft.UI.Xaml.props",
+        "build/native/Microsoft.UI.Xaml.targets",
+        "buildTransitive/Microsoft.UI.Xaml.targets",
+        "buildTransitive/native/Microsoft.UI.Xaml.props",
+        "buildTransitive/native/Microsoft.UI.Xaml.targets",
+        "lib/net8.0-windows10.0.22621.0/Microsoft.UI.Xaml.Projection.dll",
+        "lib/net8.0-windows10.0.22621.0/Microsoft.UI.Xaml.Projection.xml",
+        "lib/net8.0-windows10.0.22621.0/Microsoft.UI.Xaml/Themes/Generic.xaml",
+        "lib/uap10.0/Design/Microsoft.UI.Xaml.Design.dll",
+        "lib/uap10.0/Microsoft.UI.Xaml.winmd",
+        "lib/uap10.0/Microsoft.UI.Xaml.xml",
+        "lib/uap10.0/Microsoft.UI.Xaml/Themes/Generic.xaml",
+        "license.txt",
+        "microsoft.ui.xaml.2.8.7-prerelease.241119001.nupkg.sha512",
+        "microsoft.ui.xaml.nuspec",
+        "readme.txt",
+        "runtimes/win-arm/native/Microsoft.UI.Xaml.dll",
+        "runtimes/win-arm/native/Microsoft.UI.Xaml.pri",
+        "runtimes/win-arm/native/Microsoft.UI.Xaml/Assets/NoiseAsset_256x256_PNG.png",
+        "runtimes/win-arm64/native/Microsoft.UI.Xaml.dll",
+        "runtimes/win-arm64/native/Microsoft.UI.Xaml.pri",
+        "runtimes/win-arm64/native/Microsoft.UI.Xaml/Assets/NoiseAsset_256x256_PNG.png",
+        "runtimes/win-x64/native/Microsoft.UI.Xaml.dll",
+        "runtimes/win-x64/native/Microsoft.UI.Xaml.pri",
+        "runtimes/win-x64/native/Microsoft.UI.Xaml/Assets/NoiseAsset_256x256_PNG.png",
+        "runtimes/win-x86/native/Microsoft.UI.Xaml.dll",
+        "runtimes/win-x86/native/Microsoft.UI.Xaml.pri",
+        "runtimes/win-x86/native/Microsoft.UI.Xaml/Assets/NoiseAsset_256x256_PNG.png",
+        "tools/VisualStudioToolsManifest.xml"
+      ]
+    },
+    "Microsoft.Web.WebView2/1.0.2950-prerelease": {
+      "sha512": "15GH8uTwpzNi8PH5MFS5cnjJj7LxCMJXD3gfMVEiTqniKrABb8u8B8d2fLXIvnl/YlATrtkX1M+fXF2wokIiUA==",
+      "type": "package",
+      "path": "microsoft.web.webview2/1.0.2950-prerelease",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "NOTICE.txt",
+        "WebView2.idl",
+        "WebView2.tlb",
+        "WebView2Experimental.idl",
+        "WebView2Experimental.tlb",
+        "build/Common.targets",
+        "build/Microsoft.Web.WebView2.targets",
+        "build/WebView2Rules.Project.xml",
+        "build/native/Microsoft.Web.WebView2.targets",
+        "build/native/arm64/WebView2Loader.dll",
+        "build/native/arm64/WebView2Loader.dll.lib",
+        "build/native/arm64/WebView2LoaderStatic.lib",
+        "build/native/include-winrt/WebView2Interop.h",
+        "build/native/include-winrt/WebView2Interop.idl",
+        "build/native/include-winrt/WebView2Interop.tlb",
+        "build/native/include/WebView2.h",
+        "build/native/include/WebView2EnvironmentOptions.h",
+        "build/native/include/WebView2Experimental.h",
+        "build/native/include/WebView2ExperimentalEnvironmentOptions.h",
+        "build/native/x64/WebView2Loader.dll",
+        "build/native/x64/WebView2Loader.dll.lib",
+        "build/native/x64/WebView2LoaderStatic.lib",
+        "build/native/x86/WebView2Loader.dll",
+        "build/native/x86/WebView2Loader.dll.lib",
+        "build/native/x86/WebView2LoaderStatic.lib",
+        "build/wv2winrt.targets",
+        "buildTransitive/Microsoft.Web.WebView2.targets",
+        "lib/Microsoft.Web.WebView2.Core.winmd",
+        "lib/net462/Microsoft.Web.WebView2.Core.dll",
+        "lib/net462/Microsoft.Web.WebView2.Core.xml",
+        "lib/net462/Microsoft.Web.WebView2.WinForms.dll",
+        "lib/net462/Microsoft.Web.WebView2.WinForms.xml",
+        "lib/net462/Microsoft.Web.WebView2.Wpf.dll",
+        "lib/net462/Microsoft.Web.WebView2.Wpf.xml",
+        "lib_manual/net5.0-windows10.0.17763.0/Microsoft.Web.WebView2.Wpf.dll",
+        "lib_manual/net5.0-windows10.0.17763.0/Microsoft.Web.WebView2.Wpf.xml",
+        "lib_manual/net6.0-windows10.0.17763.0/Microsoft.Web.WebView2.Core.Projection.dll",
+        "lib_manual/net8.0-windows10.0.17763.0/Microsoft.Web.WebView2.Core.Projection.dll",
+        "lib_manual/netcoreapp3.0/Microsoft.Web.WebView2.Core.dll",
+        "lib_manual/netcoreapp3.0/Microsoft.Web.WebView2.Core.xml",
+        "lib_manual/netcoreapp3.0/Microsoft.Web.WebView2.WinForms.dll",
+        "lib_manual/netcoreapp3.0/Microsoft.Web.WebView2.WinForms.xml",
+        "lib_manual/netcoreapp3.0/Microsoft.Web.WebView2.Wpf.dll",
+        "lib_manual/netcoreapp3.0/Microsoft.Web.WebView2.Wpf.xml",
+        "microsoft.web.webview2.1.0.2950-prerelease.nupkg.sha512",
+        "microsoft.web.webview2.nuspec",
+        "runtimes/win-arm64/native/WebView2Loader.dll",
+        "runtimes/win-arm64/native_uap/Microsoft.Web.WebView2.Core.dll",
+        "runtimes/win-x64/native/WebView2Loader.dll",
+        "runtimes/win-x64/native_uap/Microsoft.Web.WebView2.Core.dll",
+        "runtimes/win-x86/native/WebView2Loader.dll",
+        "runtimes/win-x86/native_uap/Microsoft.Web.WebView2.Core.dll",
+        "tools/VisualStudioToolsManifest.xml",
+        "tools/wv2winrt/Antlr3.Runtime.dll",
+        "tools/wv2winrt/Antlr4.StringTemplate.dll",
+        "tools/wv2winrt/System.Buffers.dll",
+        "tools/wv2winrt/System.CommandLine.DragonFruit.dll",
+        "tools/wv2winrt/System.CommandLine.Rendering.dll",
+        "tools/wv2winrt/System.CommandLine.dll",
+        "tools/wv2winrt/System.Memory.dll",
+        "tools/wv2winrt/System.Numerics.Vectors.dll",
+        "tools/wv2winrt/System.Runtime.CompilerServices.Unsafe.dll",
+        "tools/wv2winrt/codegen_util.dll",
+        "tools/wv2winrt/concrt140_app.dll",
+        "tools/wv2winrt/cs/System.CommandLine.resources.dll",
+        "tools/wv2winrt/de/System.CommandLine.resources.dll",
+        "tools/wv2winrt/es/System.CommandLine.resources.dll",
+        "tools/wv2winrt/fr/System.CommandLine.resources.dll",
+        "tools/wv2winrt/it/System.CommandLine.resources.dll",
+        "tools/wv2winrt/ja/System.CommandLine.resources.dll",
+        "tools/wv2winrt/ko/System.CommandLine.resources.dll",
+        "tools/wv2winrt/msvcp140_1_app.dll",
+        "tools/wv2winrt/msvcp140_2_app.dll",
+        "tools/wv2winrt/msvcp140_app.dll",
+        "tools/wv2winrt/pl/System.CommandLine.resources.dll",
+        "tools/wv2winrt/pt-BR/System.CommandLine.resources.dll",
+        "tools/wv2winrt/ru/System.CommandLine.resources.dll",
+        "tools/wv2winrt/tr/System.CommandLine.resources.dll",
+        "tools/wv2winrt/type_hierarchy.dll",
+        "tools/wv2winrt/vcamp140_app.dll",
+        "tools/wv2winrt/vccorlib140_app.dll",
+        "tools/wv2winrt/vcomp140_app.dll",
+        "tools/wv2winrt/vcruntime140_app.dll",
+        "tools/wv2winrt/winrt_winmd.dll",
+        "tools/wv2winrt/winrt_winmd.winmd",
+        "tools/wv2winrt/wv2winrt.exe",
+        "tools/wv2winrt/wv2winrt.exe.config",
+        "tools/wv2winrt/wv2winrt.xml",
+        "tools/wv2winrt/zh-Hans/System.CommandLine.resources.dll",
+        "tools/wv2winrt/zh-Hant/System.CommandLine.resources.dll"
+      ]
+    },
+    "Microsoft.Windows.CsWinRT/2.2.0": {
+      "sha512": "R8MDVawukHrKgYCFgYaoLfbAna/FrImEFRxDK9k8ITbrXv3KLE5uN6tRqrNV83H4MFdqJ/uiA/hg1cSsXkl0vw==",
+      "type": "package",
+      "path": "microsoft.windows.cswinrt/2.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "NOTICE.txt",
+        "analyzers/dotnet/cs/WinRT.SourceGenerator.dll",
+        "analyzers/dotnet/cs/de-DE/CsWinRTDiagnosticStrings.resx",
+        "analyzers/dotnet/cs/es-ES/CsWinRTDiagnosticStrings.resx",
+        "analyzers/dotnet/cs/fr-FR/CsWinRTDiagnosticStrings.resx",
+        "analyzers/dotnet/cs/it-IT/CsWinRTDiagnosticStrings.resx",
+        "analyzers/dotnet/cs/ja-JP/CsWinRTDiagnosticStrings.resx",
+        "analyzers/dotnet/cs/ko-KR/CsWinRTDiagnosticStrings.resx",
+        "analyzers/dotnet/cs/pt-BR/CsWinRTDiagnosticStrings.resx",
+        "analyzers/dotnet/cs/ru-RU/CsWinRTDiagnosticStrings.resx",
+        "analyzers/dotnet/cs/zh-CN/CsWinRTDiagnosticStrings.resx",
+        "analyzers/dotnet/cs/zh-TW/CsWinRTDiagnosticStrings.resx",
+        "build/Microsoft.Windows.CsWinRT.Authoring.Transitive.targets",
+        "build/Microsoft.Windows.CsWinRT.Authoring.targets",
+        "build/Microsoft.Windows.CsWinRT.Embedded.targets",
+        "build/Microsoft.Windows.CsWinRT.IIDOptimizer.targets",
+        "build/Microsoft.Windows.CsWinRT.props",
+        "build/Microsoft.Windows.CsWinRT.targets",
+        "build/tools/IIDOptimizer/IIDOptimizer.deps.json",
+        "build/tools/IIDOptimizer/IIDOptimizer.dll",
+        "build/tools/IIDOptimizer/IIDOptimizer.exe",
+        "build/tools/IIDOptimizer/IIDOptimizer.runtimeconfig.json",
+        "build/tools/IIDOptimizer/Mono.Cecil.Mdb.dll",
+        "build/tools/IIDOptimizer/Mono.Cecil.Pdb.dll",
+        "build/tools/IIDOptimizer/Mono.Cecil.Rocks.dll",
+        "build/tools/IIDOptimizer/Mono.Cecil.dll",
+        "build/tools/IIDOptimizer/System.CommandLine.dll",
+        "cswinrt.exe",
+        "embedded/any/ActivationFactory.cs",
+        "embedded/any/AgileReference.cs",
+        "embedded/any/Attributes.cs",
+        "embedded/any/CastExtensions.cs",
+        "embedded/any/ComWrappersSupport.cs",
+        "embedded/any/Context.cs",
+        "embedded/any/DataErrorsChangedEventArgs.cs",
+        "embedded/any/DelegateExtensions.cs",
+        "embedded/any/DerivedComposed.cs",
+        "embedded/any/EventHandler.cs",
+        "embedded/any/EventHandlerEventSource.cs",
+        "embedded/any/EventHandlerEventSource{T}.cs",
+        "embedded/any/EventRegistrationToken.cs",
+        "embedded/any/EventRegistrationTokenTable{T}.cs",
+        "embedded/any/EventSourceCache.cs",
+        "embedded/any/EventSourceState{TDelegate}.cs",
+        "embedded/any/EventSource{TDelegate}.cs",
+        "embedded/any/ExceptionErrorInfo.cs",
+        "embedded/any/ExceptionHelpers.Microsoft.cs",
+        "embedded/any/ExceptionHelpers.cs",
+        "embedded/any/FeatureSwitches.cs",
+        "embedded/any/FundamentalMarshalers.cs",
+        "embedded/any/Geometry.cs",
+        "embedded/any/GuidGenerator.cs",
+        "embedded/any/IActivationFactory.cs",
+        "embedded/any/IContextCallback.cs",
+        "embedded/any/IDelegateVftbl.cs",
+        "embedded/any/IID.g.cs",
+        "embedded/any/IInspectable.cs",
+        "embedded/any/IReferenceTracker.cs",
+        "embedded/any/IStringable.cs",
+        "embedded/any/IUnknownVftbl.cs",
+        "embedded/any/KeyValuePair.cs",
+        "embedded/any/Marshalers.cs",
+        "embedded/any/Module.cs",
+        "embedded/any/MonoSupport.cs",
+        "embedded/any/NotifyCollectionChangedAction.cs",
+        "embedded/any/NotifyCollectionChangedEventArgs.cs",
+        "embedded/any/NotifyCollectionChangedEventHandler.cs",
+        "embedded/any/Nullable.cs",
+        "embedded/any/Numerics.cs",
+        "embedded/any/ObjectReference.cs",
+        "embedded/any/Platform.cs",
+        "embedded/any/Projections.CustomTypeMappings.EventHandler.cs",
+        "embedded/any/Projections.CustomTypeMappings.g.cs",
+        "embedded/any/Projections.cs",
+        "embedded/any/PropertyChangedEventArgs.cs",
+        "embedded/any/PropertyChangedEventHandler.cs",
+        "embedded/any/StandardDelegates.cs",
+        "embedded/any/SystemTypes.cs",
+        "embedded/any/Type.ArrayMarshalling.cs",
+        "embedded/any/Type.cs",
+        "embedded/any/TypeExtensions.cs",
+        "embedded/any/TypeNameSupport.cs",
+        "embedded/any/Uri.cs",
+        "embedded/any/WinRTRuntimeErrorStrings.Designer.cs",
+        "embedded/any/WuxMuxProjectedTypeAttribute.cs",
+        "embedded/net6.0/AttributeMessages.net5.cs",
+        "embedded/net6.0/Bindable.net5.cs",
+        "embedded/net6.0/CollectionHybrid.net5.cs",
+        "embedded/net6.0/ComWrappersSupport.net5.cs",
+        "embedded/net6.0/ExceptionErrorInfo.net5.cs",
+        "embedded/net6.0/ExceptionHelpers.Windows.net5.cs",
+        "embedded/net6.0/GenericDelegateHelper.net5.cs",
+        "embedded/net6.0/IAgileReference.net5.cs",
+        "embedded/net6.0/ICommand.net5.cs",
+        "embedded/net6.0/ICustomPropertyProvider.net5.cs",
+        "embedded/net6.0/IDictionary.net5.cs",
+        "embedded/net6.0/IDisposable.net5.cs",
+        "embedded/net6.0/IEnumerable.net5.cs",
+        "embedded/net6.0/IInspectable.net5.cs",
+        "embedded/net6.0/IList.net5.cs",
+        "embedded/net6.0/IMarshal.net5.cs",
+        "embedded/net6.0/INotifyCollectionChanged.net5.cs",
+        "embedded/net6.0/INotifyDataErrorInfo.net5.cs",
+        "embedded/net6.0/INotifyPropertyChanged.net5.cs",
+        "embedded/net6.0/IPropertyValue.net5.cs",
+        "embedded/net6.0/IReadOnlyDictionary.net5.cs",
+        "embedded/net6.0/IReadOnlyList.net5.cs",
+        "embedded/net6.0/IReferenceArray.net5.cs",
+        "embedded/net6.0/IServiceProvider.net5.cs",
+        "embedded/net6.0/IWeakReferenceSource.net5.cs",
+        "embedded/net6.0/IWinRTObject.net5.cs",
+        "embedded/net6.0/SingleInterfaceOptimizedObject.net5.cs",
+        "embedded/netstandard2.0/Bindable.netstandard2.0.cs",
+        "embedded/netstandard2.0/ComWrappersSupport.netstandard2.0.cs",
+        "embedded/netstandard2.0/ExceptionErrorInfo.netstandard2.0.cs",
+        "embedded/netstandard2.0/IAgileReference.netstandard2.0.cs",
+        "embedded/netstandard2.0/ICommand.netstandard2.0.cs",
+        "embedded/netstandard2.0/ICustomPropertyProvider.netstandard2.0.cs",
+        "embedded/netstandard2.0/IDictionary.netstandard2.0.cs",
+        "embedded/netstandard2.0/IDisposable.netstandard2.0.cs",
+        "embedded/netstandard2.0/IEnumerable.netstandard2.0.cs",
+        "embedded/netstandard2.0/IList.netstandard2.0.cs",
+        "embedded/netstandard2.0/IMarshal.netstandard2.0.cs",
+        "embedded/netstandard2.0/INotifyCollectionChanged.netstandard2.0.cs",
+        "embedded/netstandard2.0/INotifyDataErrorInfo.netstandard2.0.cs",
+        "embedded/netstandard2.0/INotifyPropertyChanged.netstandard2.0.cs",
+        "embedded/netstandard2.0/IPropertyValue.netstandard2.0.cs",
+        "embedded/netstandard2.0/IReadOnlyDictionary.netstandard2.0.cs",
+        "embedded/netstandard2.0/IReadOnlyList.netstandard2.0.cs",
+        "embedded/netstandard2.0/IReferenceArray.netstandard2.0.cs",
+        "embedded/netstandard2.0/IServiceProvider.netstandard2.0.cs",
+        "embedded/netstandard2.0/IWeakReferenceSource.netstandard2.0.cs",
+        "embedded/netstandard2.0/WeakReference.netstandard2.0.cs",
+        "hosting/arm64/native/WinRT.Host.dll",
+        "hosting/arm64/native/de-DE/WinRT.Host.dll.mui",
+        "hosting/arm64/native/en-US/WinRT.Host.dll.mui",
+        "hosting/arm64/native/es-ES/WinRT.Host.dll.mui",
+        "hosting/arm64/native/fr-FR/WinRT.Host.dll.mui",
+        "hosting/arm64/native/it-IT/WinRT.Host.dll.mui",
+        "hosting/arm64/native/ja-JP/WinRT.Host.dll.mui",
+        "hosting/arm64/native/ko-KR/WinRT.Host.dll.mui",
+        "hosting/arm64/native/pt-BR/WinRT.Host.dll.mui",
+        "hosting/arm64/native/ru-RU/WinRT.Host.dll.mui",
+        "hosting/arm64/native/zh-CN/WinRT.Host.dll.mui",
+        "hosting/arm64/native/zh-TW/WinRT.Host.dll.mui",
+        "hosting/x64/native/WinRT.Host.dll",
+        "hosting/x64/native/de-DE/WinRT.Host.dll.mui",
+        "hosting/x64/native/en-US/WinRT.Host.dll.mui",
+        "hosting/x64/native/es-ES/WinRT.Host.dll.mui",
+        "hosting/x64/native/fr-FR/WinRT.Host.dll.mui",
+        "hosting/x64/native/it-IT/WinRT.Host.dll.mui",
+        "hosting/x64/native/ja-JP/WinRT.Host.dll.mui",
+        "hosting/x64/native/ko-KR/WinRT.Host.dll.mui",
+        "hosting/x64/native/pt-BR/WinRT.Host.dll.mui",
+        "hosting/x64/native/ru-RU/WinRT.Host.dll.mui",
+        "hosting/x64/native/zh-CN/WinRT.Host.dll.mui",
+        "hosting/x64/native/zh-TW/WinRT.Host.dll.mui",
+        "hosting/x86/native/WinRT.Host.dll",
+        "hosting/x86/native/de-DE/WinRT.Host.dll.mui",
+        "hosting/x86/native/en-US/WinRT.Host.dll.mui",
+        "hosting/x86/native/es-ES/WinRT.Host.dll.mui",
+        "hosting/x86/native/fr-FR/WinRT.Host.dll.mui",
+        "hosting/x86/native/it-IT/WinRT.Host.dll.mui",
+        "hosting/x86/native/ja-JP/WinRT.Host.dll.mui",
+        "hosting/x86/native/ko-KR/WinRT.Host.dll.mui",
+        "hosting/x86/native/pt-BR/WinRT.Host.dll.mui",
+        "hosting/x86/native/ru-RU/WinRT.Host.dll.mui",
+        "hosting/x86/native/zh-CN/WinRT.Host.dll.mui",
+        "hosting/x86/native/zh-TW/WinRT.Host.dll.mui",
+        "lib/net6.0/WinRT.Host.Shim.dll",
+        "lib/net6.0/WinRT.Runtime.dll",
+        "lib/net6.0/de-DE/WinRTRuntimeErrorStrings.resx",
+        "lib/net6.0/es-ES/WinRTRuntimeErrorStrings.resx",
+        "lib/net6.0/fr-FR/WinRTRuntimeErrorStrings.resx",
+        "lib/net6.0/it-IT/WinRTRuntimeErrorStrings.resx",
+        "lib/net6.0/ja-JP/WinRTRuntimeErrorStrings.resx",
+        "lib/net6.0/ko-KR/WinRTRuntimeErrorStrings.resx",
+        "lib/net6.0/pt-BR/WinRTRuntimeErrorStrings.resx",
+        "lib/net6.0/ru-RU/WinRTRuntimeErrorStrings.resx",
+        "lib/net6.0/zh-CN/WinRTRuntimeErrorStrings.resx",
+        "lib/net6.0/zh-TW/WinRTRuntimeErrorStrings.resx",
+        "lib/net8.0/WinRT.Runtime.dll",
+        "metadata/WinRT.Interop.winmd",
+        "microsoft.windows.cswinrt.2.2.0.nupkg.sha512",
+        "microsoft.windows.cswinrt.nuspec",
+        "readme.txt"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net9.0-windows10.0.26100": [
+      "Get.Data >= 1.1.6",
+      "Get.Data.SourceGenerators >= 1.1.7",
+      "Microsoft.NET.ILLink.Tasks >= 9.0.0",
+      "Microsoft.UI.Xaml >= 2.8.7-prerelease.241119001",
+      "Microsoft.Web.WebView2 >= 1.0.2950-prerelease",
+      "Microsoft.Windows.CsWinRT >= 2.2.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\Admin\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\": {}
+  },
+  "project": {
+    "version": "1.0.7",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\Admin\\source\\repos\\mediaexplorer74\\UI-Data\\Src\\UI.Data.UWP.NET9\\UI.Data.UWP.NET9.csproj",
+      "projectName": "Get.UI.Data.UWP.NET9",
+      "projectPath": "C:\\Users\\Admin\\source\\repos\\mediaexplorer74\\UI-Data\\Src\\UI.Data.UWP.NET9\\UI.Data.UWP.NET9.csproj",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Admin\\source\\repos\\mediaexplorer74\\UI-Data\\Src\\UI.Data.UWP.NET9\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\Admin\\source\\repos\\mediaexplorer74\\UI-Data\\Src\\NuGet.Config",
+        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net9.0-windows10.0.26100.0"
+      ],
+      "sources": {
+        "C:\\Program Files\\dotnet\\library-packs": {},
+        "https://api.nuget.org/v3/index.json": {},
+        "https://pkgs.dev.azure.com/dnceng/public/_packaging/dotnet9/nuget/v3/index.json": {}
+      },
+      "frameworks": {
+        "net9.0-windows10.0.26100": {
+          "targetAlias": "net9.0-windows10.0.26100.0",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "all"
+      },
+      "SdkAnalysisLevel": "9.0.200"
+    },
+    "frameworks": {
+      "net9.0-windows10.0.26100": {
+        "targetAlias": "net9.0-windows10.0.26100.0",
+        "dependencies": {
+          "Get.Data": {
+            "target": "Package",
+            "version": "[1.1.6, )"
+          },
+          "Get.Data.SourceGenerators": {
+            "target": "Package",
+            "version": "[1.1.7, )"
+          },
+          "Microsoft.NET.ILLink.Tasks": {
+            "suppressParent": "All",
+            "target": "Package",
+            "version": "[9.0.0, )",
+            "autoReferenced": true
+          },
+          "Microsoft.UI.Xaml": {
+            "target": "Package",
+            "version": "[2.8.7-prerelease.241119001, )"
+          },
+          "Microsoft.Web.WebView2": {
+            "include": "None",
+            "target": "Package",
+            "version": "[1.0.2950-prerelease, )"
+          },
+          "Microsoft.Windows.CsWinRT": {
+            "target": "Package",
+            "version": "[2.2.0, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481",
+          "net461"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Runtime.win-arm64",
+            "version": "[9.0.0, 9.0.0]"
+          },
+          {
+            "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
+            "version": "[9.0.0, 9.0.0]"
+          },
+          {
+            "name": "Microsoft.AspNetCore.App.Runtime.win-x86",
+            "version": "[9.0.0, 9.0.0]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Runtime.win-arm64",
+            "version": "[9.0.0, 9.0.0]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Runtime.win-x64",
+            "version": "[9.0.0, 9.0.0]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Runtime.win-x86",
+            "version": "[9.0.0, 9.0.0]"
+          },
+          {
+            "name": "Microsoft.Windows.SDK.NET.Ref",
+            "version": "[10.0.26100.57, 10.0.26100.57]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Runtime.win-arm64",
+            "version": "[9.0.0, 9.0.0]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
+            "version": "[9.0.0, 9.0.0]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Runtime.win-x86",
+            "version": "[9.0.0, 9.0.0]"
+          }
+        ],
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          },
+          "Microsoft.Windows.SDK.NET.Ref.Windows": {
+            "privateAssets": "all"
+          },
+          "Microsoft.Windows.SDK.NET.Ref.Xaml": {
+            "privateAssets": "none"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200-preview.0.24575.35/PortableRuntimeIdentifierGraph.json"
+      }
+    },
+    "runtimes": {
+      "win-arm64": {
+        "#import": []
+      },
+      "win-x64": {
+        "#import": []
+      },
+      "win-x86": {
+        "#import": []
+      }
+    }
+  }
+}

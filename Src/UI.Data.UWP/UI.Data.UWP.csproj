@@ -1,0 +1,45 @@
+﻿<Project Sdk="MSBuild.Sdk.Extras">
+	<PropertyGroup Label="Globals">
+		<WebView2UseWinRT>False</WebView2UseWinRT>
+	</PropertyGroup>
+	<PropertyGroup>
+		<TargetFrameworks>uap10.0.17763</TargetFrameworks>
+		<TargetPlatformBaseVersion>10.0</TargetPlatformBaseVersion>
+		<TargetPlatformRevision>22621</TargetPlatformRevision>
+		<TargetPlatformMinRevision>17763</TargetPlatformMinRevision>
+		<TargetPlatformVersion>$(TargetPlatformBaseVersion).$(TargetPlatformRevision).0</TargetPlatformVersion>
+		<TargetPlatformMinVersion>$(TargetPlatformBaseVersion).$(TargetPlatformMinRevision).0</TargetPlatformMinVersion>
+		<ExtrasUwpMetaPackageVersion>6.2.14</ExtrasUwpMetaPackageVersion>
+		<GenerateLibraryLayout>true</GenerateLibraryLayout>
+		<ExtrasEnableDefaultXamlItems>true</ExtrasEnableDefaultXamlItems>
+		<AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+		<Platforms>x64;ARM64;x86;ARM</Platforms>
+		<RuntimeIdentifiers>win10-x64;win-arm64</RuntimeIdentifiers>
+		<AssemblyName>Get.UI.Data.UWP</AssemblyName>
+		<LangVersion>12</LangVersion>
+		<Nullable>enable</Nullable>
+		<RootNamespace>Get.UI.Data</RootNamespace>
+		<AssemblyName>Get.UI.Data.UWP</AssemblyName>
+		<Version>1.0.2</Version>
+		<PackageOutputPath>D:\Programming\VS\.LocalNugetPackages</PackageOutputPath>
+		<WebView2NeverCopyLoaderDllToOutputDirectory>true</WebView2NeverCopyLoaderDllToOutputDirectory>
+	</PropertyGroup>
+	<!--
+		Bundle the .rd.xml directives as embedded resource so they're picked up automatically.
+		See: https://devblogs.microsoft.com/dotnet/net-native-deep-dive-making-your-library-great/.
+	  -->
+	<ItemGroup>
+		<EmbeddedResource Include="Properties\UI.Data.UWP.rd.xml" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Web.WebView2" Version="1.0.2849.39" PrivateAssets="all" />
+		<PackageReference Include="Get.Data" Version="1.1.6" />
+		<PackageReference Include="Get.Data.SourceGenerators" Version="1.1.7" />
+		<PackageReference Include="Microsoft.UI.Xaml" Version="2.8.7-prerelease.241119001" />
+		<PackageReference Include="PolySharp" Version="1.14.1" PrivateAssets="all" />
+		<PackageReference Include="Win2D.uwp" Version="1.28.0-preview1" />
+	</ItemGroup>
+
+	<Import Project="..\UI.Data\UI.Data.projitems" Label="Shared" />
+</Project>

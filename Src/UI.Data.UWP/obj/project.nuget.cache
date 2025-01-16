@@ -1,0 +1,32 @@
+{
+  "version": 2,
+  "dgSpecHash": "s7xMLJHpzXs=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Admin\\source\\repos\\mediaexplorer74\\UI-Data\\Src\\UI.Data.UWP\\UI.Data.UWP.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Admin\\.nuget\\packages\\get.data\\1.1.6\\get.data.1.1.6.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\get.data.sourcegenerators\\1.1.7\\get.data.sourcegenerators.1.1.7.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.net.native.compiler\\2.2.12-rel-31116-00\\microsoft.net.native.compiler.2.2.12-rel-31116-00.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.net.uwpcoreruntimesdk\\2.2.14\\microsoft.net.uwpcoreruntimesdk.2.2.14.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.netcore.platforms\\2.1.0\\microsoft.netcore.platforms.2.1.0.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.netcore.universalwindowsplatform\\6.2.14\\microsoft.netcore.universalwindowsplatform.6.2.14.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.ui.xaml\\2.8.7-prerelease.241119001\\microsoft.ui.xaml.2.8.7-prerelease.241119001.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.web.webview2\\1.0.2849.39\\microsoft.web.webview2.1.0.2849.39.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\polysharp\\1.14.1\\polysharp.1.14.1.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\runtime.win10-arm.microsoft.net.native.compiler\\2.2.12-rel-31116-00\\runtime.win10-arm.microsoft.net.native.compiler.2.2.12-rel-31116-00.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\runtime.win10-arm.microsoft.net.native.sharedlibrary\\2.2.8-rel-31116-00\\runtime.win10-arm.microsoft.net.native.sharedlibrary.2.2.8-rel-31116-00.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\runtime.win10-arm.microsoft.net.uwpcoreruntimesdk\\2.2.14\\runtime.win10-arm.microsoft.net.uwpcoreruntimesdk.2.2.14.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\runtime.win10-arm64.microsoft.net.native.compiler\\2.2.12-rel-31116-00\\runtime.win10-arm64.microsoft.net.native.compiler.2.2.12-rel-31116-00.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\runtime.win10-arm64.microsoft.net.native.sharedlibrary\\2.2.8-rel-31116-00\\runtime.win10-arm64.microsoft.net.native.sharedlibrary.2.2.8-rel-31116-00.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\runtime.win10-x64.microsoft.net.native.compiler\\2.2.12-rel-31116-00\\runtime.win10-x64.microsoft.net.native.compiler.2.2.12-rel-31116-00.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\runtime.win10-x64.microsoft.net.native.sharedlibrary\\2.2.8-rel-31116-00\\runtime.win10-x64.microsoft.net.native.sharedlibrary.2.2.8-rel-31116-00.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\runtime.win10-x64.microsoft.net.uwpcoreruntimesdk\\2.2.14\\runtime.win10-x64.microsoft.net.uwpcoreruntimesdk.2.2.14.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\runtime.win10-x64.microsoft.netcore.universalwindowsplatform\\6.2.14\\runtime.win10-x64.microsoft.netcore.universalwindowsplatform.6.2.14.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\runtime.win10-x86.microsoft.net.native.compiler\\2.2.12-rel-31116-00\\runtime.win10-x86.microsoft.net.native.compiler.2.2.12-rel-31116-00.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\runtime.win10-x86.microsoft.net.native.sharedlibrary\\2.2.8-rel-31116-00\\runtime.win10-x86.microsoft.net.native.sharedlibrary.2.2.8-rel-31116-00.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\runtime.win10-x86.microsoft.net.uwpcoreruntimesdk\\2.2.14\\runtime.win10-x86.microsoft.net.uwpcoreruntimesdk.2.2.14.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\win2d.uwp\\1.28.0-preview1\\win2d.uwp.1.28.0-preview1.nupkg.sha512"
+  ],
+  "logs": []
+}

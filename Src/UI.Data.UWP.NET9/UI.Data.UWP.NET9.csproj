@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net9.0-windows10.0.26100.0</TargetFramework>
+		<TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+		<UseUwp>true</UseUwp>
+		<UseUwpTools>true</UseUwpTools>
+		<IsAotCompatible>true</IsAotCompatible>
+		<DisableRuntimeMarshalling>true</DisableRuntimeMarshalling>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<Nullable>enable</Nullable>
+		<RootNamespace>Get.UI.Data</RootNamespace>
+		<AssemblyName>Get.UI.Data.UWP.NET9</AssemblyName>
+		<Version>1.0.7</Version>
+		<PackageOutputPath>D:\Programming\VS\.LocalNugetPackages</PackageOutputPath>
+		<DefineConstants>$(DefineConstants);UWPNET9</DefineConstants>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.UI.Xaml" Version="2.8.7-prerelease.241119001" />
+		<PackageReference Include="Microsoft.Web.WebView2" Version="1.0.2950-prerelease" IncludeAssets="none" />
+		<PackageReference Include="Microsoft.Windows.CsWinRT" Version="2.2.0" />
+		<PackageReference Include="Get.Data" Version="1.1.6" />
+		<PackageReference Include="Get.Data.SourceGenerators" Version="1.1.7" />
+	</ItemGroup>
+	<Import Project="..\UI.Data\UI.Data.projitems" Label="Shared" />
+</Project>
